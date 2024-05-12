@@ -27,6 +27,7 @@ def decrement_list(arr):
     new_arr = list(map(lambda x: x - 1, arr))
     return new_arr
 
+
 def extract_full_name(l):
     return list(map(lambda val: f"{val['first']} {val['last']}", l))
 
@@ -153,8 +154,6 @@ print(round(10.5))  # 11
 print(round(1.212121, 2))  # 1.21
 
 
-
-
 # zip: Make an iterator that aggregates elements from each of the iterables
 # Returns an iterator of tuples, where the i-th tuple contains the i-th element of each sequence
 # The iterator stops when the shortest input iterable is exhausted
@@ -168,6 +167,7 @@ def interleave(str1, str2):
 
     return newstr
 
+
 first_zip = list(zip([1, 2, 3], [4, 5, 6]))  # [(1, 4), (2, 5), (3, 6)]
 
 back_together = list(zip(*first_zip))  # [(1,2,3), (4,5,6)]
@@ -178,29 +178,28 @@ students = ["dan", "ang", "kate"]
 
 # returns dict with {student:"highest score"} USING DICT COMP
 # {'dan': 98, 'ang': 91, 'kate': 78}
-final_grades = {t[0]:max(t[1], t[2]) for t in zip(students, midterms, finals)}
-
+final_grades = {t[0]: max(t[1], t[2]) for t in zip(students, midterms, finals)}
 
 # returns dict with {student:"highest score"} (same thing as above) USING MAP+LAMBDA
 # {'dan': 98, 'ang': 91, 'kate': 78}
 final_grades = dict(
-	zip(
-		students,
-		map(
-			lambda pair: max(pair),
-			zip(midterms, finals)
-		)
-	)
+    zip(
+        students,
+        map(
+            lambda pair: max(pair),
+            zip(midterms, finals)
+        )
+    )
 )
 
 # returns dict with student: "average score"
 # {'dan': 89.0, 'ang': 90.0, 'kate': 65.5}
 avg_grades = dict(
-	zip(
-		students,
-		map(
-			lambda pair: ((pair[0]+pair[1])/2),
-			zip(midterms, finals)
-		)
-	)
+    zip(
+        students,
+        map(
+            lambda pair: ((pair[0] + pair[1]) / 2),
+            zip(midterms, finals)
+        )
+    )
 )
