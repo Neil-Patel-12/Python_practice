@@ -69,3 +69,46 @@ list_com = sys.getsizeof([x * 10 for x in range(1000)])
 gen_exp = sys.getsizeof(x * 10 for x in range(1000))
 print(f"List Comprehension: {list_com} bytes")
 print(f"Generator Expression: {gen_exp} bytes")
+
+
+
+# sorted: Returns a new sorted list from the items in iterable
+more_numbers = [6, 1, 8, 2]
+sorted(more_numbers)  # [1, 2, 6, 8]
+print(more_numbers)  # [6, 1, 8, 2]
+sorted(more_numbers, reverse=True)
+
+users = [
+    {"username": "samuel", "tweets": ["i love cake", "wow"]},
+    {"username": "katie", "tweets": ["congratulations"]},
+    {"username": "jeff", "tweets": []},
+    {"username": "doggo", "tweets": ["dogs are cool"]}
+]
+
+another1 = sorted(users, key=lambda user: user["username"])
+another2 = sorted(users, key=lambda user: len(user["tweets"]))
+
+
+
+# max: Return the larges item in an iterable or the larges of two or more arguments.
+# min is the opposite
+print( max(3, 66, 99) )
+print( max('c', 'g', 'k') )
+print( max([3, 2, 4, 1]) )
+print( max((1, 5, 9, 6)) )
+print( max("awesome") )
+print( max({1:'a', 3:'c', 2:'b'}) )
+
+names2 = ['Arya', 'Samson', 'Dora', 'Tim', 'Ollivander']
+most_char = max(len(name) for name in names2)  # Generator Expression
+name_with_most_char = max(names2, key=lambda n: len(n))
+
+songs = [
+    {"title": "happy birthday", "playcount": 1},
+    {"title": "Survive", "playcount": 6},
+    {"title": "YMCA", "playcount": 99},
+    {"title": "Toxic", "playcount": 31}
+]
+
+least_played_song = min(songs, key=lambda s: s["playcount"])
+best_song = max(songs, key=lambda s: s["playcount"])["title"]
