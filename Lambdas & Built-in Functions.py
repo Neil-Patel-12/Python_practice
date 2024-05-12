@@ -1,3 +1,4 @@
+import sys
 def square(num):
     return num * num
 
@@ -51,3 +52,20 @@ names = ["Lassie", "Colt", "Rusty", "Rob", "Nick"]
 names_less_than_5 = list(map(lambda name: f"Your less than 5 {name}",
                             filter(lambda value: len(value) < 5, names)))
 print(names_less_than_5)
+
+# all: Return True if all elements of the iterable are truthy (or if iterable is empty)
+# any: Return True if any element of the iterable is truthy. it iterable is empty, r False
+
+all([0, 1, 2, 3])  # False
+people = ["Charlie", "Cohn", "Cormen", "Cathryn"]
+print(all([name[0]=="C" for name in people]))
+
+any([0, 1, 2, 3])  # True
+people.append("Luke")
+print(any([name[0]=="C" for name in people]))
+
+# for any and all: use generator expressions if you are not storing the array
+list_com = sys.getsizeof([x * 10 for x in range(1000)])
+gen_exp = sys.getsizeof(x * 10 for x in range(1000))
+print(f"List Comprehension: {list_com} bytes")
+print(f"Generator Expression: {gen_exp} bytes")
