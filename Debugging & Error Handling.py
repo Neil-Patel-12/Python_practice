@@ -24,6 +24,7 @@ print(result)
 # SyntaxError: when python encounters incorrect syntax
 # NameError: Occurs when a variable is not defined/ hasn't been assigned
 # TypeError: An operation or function is applied to the wrong type
+#            raised when an operation or function is applied to an object of an inappropriate type
 # IndexError: Occurs when you try to access an element in a list using an invalid index
 # ValueError: Occurs when a built-in operation or function receives an argument that has...
 #     the right type but an inappropriate value   ex. int("foo")

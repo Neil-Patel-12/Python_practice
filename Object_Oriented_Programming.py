@@ -7,12 +7,34 @@
 #               private attributes and methods (aka the "inner workings")
 #               from users
 
+# class methods - are methods (with the @classmethod decorator) that are
+# not concerned with instances, but the class itself. 
+# ^^^^^ used when your crating a new instance of a class 
+
 class User:
+
+	active_users = 0  # this is a class attribute
+	allowed = ("Lakeland", "Miami", "Gainesville", "Tampa", "Orlando")
+
 	def __init__(self, first, last, age):
 		# instance attributs 
 		self.first = first
 		self.last = last
 		self.age = age
+		User.active_users += 1
+
+	@classmethod
+	def display_active_users(cls):
+		return f"There are currently {cls.active_users}"
+
+	@classmethod
+	def from_string(cls, data_str):
+		first, last, age = data_str.split(",")
+		return cls(first, last, int(age))
+
+	def log_out(self):
+		User.active_users -= 1
+		return f"{self.first} has logged out"
 
 	def full_name(self):
 		# instance methods
@@ -39,3 +61,12 @@ print(user2.initials())
 print(user1.likes("Pizza"))
 print(user1.is_senior())
 print(user2.birthday())
+
+print(User.active_users)
+print(user2.log_out())
+print(User.active_users)
+
+print(user1.display_active_users())
+print(User.display_active_users())
+
+Tom = User.from_string("Tom,Jones,89")  # calling class method
