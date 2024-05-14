@@ -242,3 +242,15 @@ avg_grades = dict(
         )
     )
 )
+
+
+
+
+# join and split
+friends_list = ["Ross", "Joe", "Chandler"]
+friends = ",".join(friends_list)
+print(friends)
+
+green = "grass, leavs, tshirt"
+green_list = green.split(", ")
+print(green_list)
