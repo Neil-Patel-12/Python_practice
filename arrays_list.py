@@ -9,6 +9,8 @@ print(mylist)
 number = len(mylist)
 print(number)
 
+initialize_array = [1] * 5
+
 list1 = ["father", "mother", "sister", "brother"]
 list2 = [1, 5, 7, 9, 3]
 list3 = [True, False, False]
@@ -18,6 +20,9 @@ list6 = list((10, 20, 30, 40, 50, 60))
 list7 = list(range(1, 11))
 
 print(type(list6))
+
+
+
 
 # <---- Access List Items ---->
 print("\n<---- Access List Items ---->")
@@ -34,6 +39,9 @@ if "lion" in animals:  # O(n)
 for i in range(0, len(animals)):
     print(animals[i])
 
+
+
+
 # <---- Change List Items ---->
 print("\n<---- Change List Items ---->")
 
@@ -43,15 +51,24 @@ cars[1:3] = ["McLaren", "Porsche"]
 cars.insert(3, "Lamborghini")
 print("the cars are: ", cars, " the size of the array is: ", len(cars))
 
+
+
+
 # <---- Add List Items ---->
 print("\n<---- Add List Items ---->")
 
 nums = [9, 6, 3, 8, 5, 2, 0, 7, 4, 1]
 nums.append(10)
+
 nums.insert(3, 20)
+
 nums.extend([60, 70, 80, 90])  # can add any iterable object (tuples, sets, dictionaries etc.)
 nums.extend("Neil Patel")
+
 print(nums)
+
+
+
 
 # <---- Remove List Items ---->
 print("\n<---- Remove List Items ---->")
@@ -64,6 +81,9 @@ del color[3]  # remove the specified index
 color.clear()  # delete everything inside the list, list still remains.
 del color  # delete the entire array
 
+
+
+
 # <---- Loop Lists ---->
 print("\n<---- Loop Lists ---->")
 
@@ -75,7 +95,13 @@ for i in range(len(cars)):
     print(f"{i}: {cars[i]}")
 print()
 
+for i, car in enumerate(cars):
+    print(i, car)
+
 [print(x) for x in cars]  # List Comprehension
+
+
+
 
 # <---- List Comprehension ---->
 print("\n<---- List Comprehension ---->")
@@ -98,6 +124,8 @@ moreNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 evenNum = [val for val in moreNumber if val % 2 == 0]
 
 oddNum = [num**2 if num % 2 == 0 else num**3 for num in moreNumber]
+
+
 
 
 # <---- List Methods ---->
@@ -130,6 +158,9 @@ print(type(phoneString))
 
 print(data)
 
+
+
+
 # <---- List SLICE ---->
 print("\n<---- List SLICE ---->")
 
@@ -148,6 +179,9 @@ print(arr77[5:0:-1])
 arr77[0], arr77[1] = arr77[1], arr77[0]
 print(arr77)
 
+
+
+
 # <---- Nested List ---->
 print("\n<---- Nested List ---->")
 
@@ -157,3 +191,6 @@ nested = [
      [7, 8, 9],
      [10, 11, 12]
 ]
+
+# this is unpacking to variable, useful for pairs
+x, y, z = [10, 20, 30]
