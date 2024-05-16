@@ -133,6 +133,9 @@ class LinkedList:
 		self.head = prev
 		print("Reversal is Successful.")
 
+	def reverse_recursive(self):
+		pass
+
 	def sort_ll(self):
 		pass
 
@@ -212,4 +215,3 @@ while running:
 # l.add_at_index(300, 5)
 # l.add_at_index(999, 1)
 # l.traversal()
-

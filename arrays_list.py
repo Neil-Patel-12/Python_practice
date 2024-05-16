@@ -77,9 +77,14 @@ color = ["yellow", "red", "green", "red", "blue", "purple", "pink", "white"]
 color.remove("red")  # removes the specified item # will remove the first occurrence
 color.pop()  # removes the last item
 color.pop(-1)  # remove the specified index
+
 del color[3]  # remove the specified index
 color.clear()  # delete everything inside the list, list still remains.
 del color  # delete the entire array
+
+# Removing an item by index
+numbers_array = [1, 9, 10, 3, 4, 5]
+del numbers_array[1]  # Removing the item at index 1, numbers_array is now [1, 10, 3, 4, 5]
 
 
 
