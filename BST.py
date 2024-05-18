@@ -159,6 +159,20 @@ class BST:
 			root = root.left
 		return root.val
 
+	def insert2(self, val):
+		self.root = self._insert2(self.root, val)
+
+	def _insert2(self, curr, val):
+		if curr is None:
+			return TreeNode(val)
+		elif val < curr.val:
+			curr.left = self._insert2(curr.left, val)
+		elif val > curr.val:
+			curr.right = self._insert2(curr.right, val)
+		elif val == curr.val:
+			print("valuse is in tree.")
+		return curr
+
 
 
 
