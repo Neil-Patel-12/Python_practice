@@ -1,3 +1,4 @@
+from collections import deque
 # Going to create a binary search tree in Python
 
 class TreeNode:
@@ -68,6 +69,29 @@ class BST:
 			self._print_postorder(curr.left)
 			self._print_postorder(curr.right)
 			print(curr.val, end=' -> ')
+
+	def traverse_iterively(self):
+		stack = []
+		stack.append(self.root)
+		while stack:
+			item = stack.pop()
+			print(item.val)
+			if item.right:
+				stack.append(item.right)
+			if item.left:
+				stack.append(item.left)
+
+	def traverse_level_iterively(self):
+		from collections import deque 
+		queue = deque([self.root])
+
+		while queue:
+			item = queue.popleft()
+			print(item.val)
+			if item.left:
+				queue.append(itme.left)
+			if item.right:
+				queue.append(item.right)
 
 	def height(self):
 		if self.root != None:
@@ -173,9 +197,15 @@ class BST:
 			print("valuse is in tree.")
 		return curr
 
+	# def isValid(self):
+	# 	return self._isValid(self.root, -99999, 99999)
 
-
-
+	# def _isValid(self, node, minimum, maximum):
+	# 	if node is None:
+	# 		return True
+	# 	if not (minimum < node.val and node.val < maximum):
+	# 		return False
+	# 	return self._isValid(node.left, minimum, node.val) and self.isValid(node.right, node.val, maximum)
 
 def fill_tree(tree, max_elems=100, max_int=1000):
 	from random import randint
@@ -196,19 +226,22 @@ tree.insert(3)
 tree.insert(5)
 tree.insert(7)
 
-tree.print_inorder()
-tree.print_preorder()
-tree.print_postorder()
+tree.traverse_iterively()
+# print(tree.isValid())
 
-print(tree.height())
+# tree.print_inorder()
+# tree.print_preorder()
+# tree.print_postorder()
 
-print(tree.search(7))
-print(tree.search(8))
+# print(tree.height())
 
-tree.breath_first_search()
+# print(tree.search(7))
+# print(tree.search(8))
 
-tree.remove(1)
-tree.print_inorder()
+# tree.breath_first_search()
+
+# tree.remove(1)
+# tree.print_inorder()
 
 # newNode = TreeNode(10)
 
@@ -216,3 +249,24 @@ tree.print_inorder()
 # print(newNode.val)
 # print(newNode.left)
 # print(newNode.right)
+
+
+
+	# def isValidBST(self):
+    #     if self.root == None:
+    #     	return True
+    		
+    #     queue = deque([self.root])
+    #     while queue:
+    #         item = queue.popleft()
+    #         if item.left:
+    #             if item.left.val < item.val:
+    #                 queue.append(item.left)
+    #             else:
+    #                 return False
+    #         if item.right:
+    #             if item.right.val > item.val:
+    #                 queue.append(item.right)
+    #             else:
+    #                 return False
+    # 	return True
