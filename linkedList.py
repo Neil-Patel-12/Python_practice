@@ -5,9 +5,9 @@
 # searching, merging 2 linked list, reverse linked list, sorting linked list, 
 
 class Node:
-	def __init__(self, data):
+	def __init__(self, data=0, next=None):
 		self.data = data
-		self.next = None
+		self.next = next
 
 class LinkedList:
 	def __init__(self):
@@ -117,9 +117,6 @@ class LinkedList:
 		if count == self.size:
 			print(f"{value} not found.")
 
-	def merge_2_ll(self, L1, L2):
-		pass
-
 	def reverse_ll(self):
 		# reverse a linked list
 		prev = None
@@ -133,11 +130,33 @@ class LinkedList:
 		self.head = prev
 		print("Reversal is Successful.")
 
-	def reverse_recursive(self):
-		pass
-
 	def sort_ll(self):
 		pass
+
+
+def merge_2_sorted_linked_list(list1, list2):
+	dummy = Node()
+	tail = dummy
+	while list1 and list2:
+		if list1.data < list2.data:
+			tail.next = list1
+			list1 = list1.next
+		else:
+			tail.next = list2
+			list2 = list2.next
+		tail = tail.next
+
+	if list1:
+		tail.next = list1
+	if list2:
+		tail.next = list2
+	return dummy.next
+
+def print_ll(head):
+	temp = head
+	while temp:
+		print(temp.data, end=" -> ")
+		temp = temp.next
 
 
 l = LinkedList()
@@ -146,7 +165,7 @@ running = True
 print()
 print("1. add_begin(#)\n2. add_at_index(#, index)\n3. add_end(#)")
 print("4. delete_begin()\n5. delete_value(#)\n6. delete_end()")
-print("7. search()\n8. merge_2_ll(#)\n9. reverse_ll()\n10. sort_ll()")
+print("7. search()\n8. reverse_ll()\n9. sort_ll()")
 print()
 
 while running:
@@ -184,13 +203,10 @@ while running:
 		val = int(input("Enter a value to search: "))
 		l.search(val)
 
-	# elif option == 8:
-	# 	pass
-
-	elif option == 9:
+	elif option == 8:
 		l.reverse_ll()
 
-	# elif option == 10:
+	# elif option == 9:
 	# 	pass
 
 	elif option == 99:
@@ -215,3 +231,20 @@ while running:
 # l.add_at_index(300, 5)
 # l.add_at_index(999, 1)
 # l.traversal()
+
+
+# TESTING /// merge_2_sorted_linked_list():
+
+# Example list1: 1 -> 4 -> 5
+list1 = Node(2)
+list1.next = Node(4)
+list1.next.next = Node(5)
+
+# Example list2: 3 -> 4 -> 8
+list2 = Node(3)
+list2.next = Node(4)
+list2.next.next = Node(8)
+
+newhead = merge_2_sorted_linked_list(list1, list2)
+
+print_ll(newhead)
