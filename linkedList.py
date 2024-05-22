@@ -130,9 +130,25 @@ class LinkedList:
 		self.head = prev
 		print("Reversal is Successful.")
 
-	def sort_ll(self):
-		pass
+	def sort_linked_list(self):
+		sorted_array = []
+		temp = self.head
+		while temp:
+			sorted_array.append(temp.data)
+			temp = temp.next
+		print(sorted_array)
+		sorted_array.sort()
+		dummy = Node()
+		tail = dummy
+		length = len(sorted_array)
 
+		i = 0
+		while length > 0:
+			tail.next = Node(sorted_array[i])
+			tail = tail.next
+			i += 1
+			length -= 1
+		self.head = dummy.next
 
 def merge_2_sorted_linked_list(list1, list2):
 	dummy = Node()
@@ -206,8 +222,8 @@ while running:
 	elif option == 8:
 		l.reverse_ll()
 
-	# elif option == 9:
-	# 	pass
+	elif option == 9:
+		l.sort_linked_list()
 
 	elif option == 99:
 		running = False
