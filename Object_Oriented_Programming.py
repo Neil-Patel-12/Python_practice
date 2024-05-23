@@ -23,6 +23,9 @@ class User:
 		self.age = age
 		User.active_users += 1
 
+	def __repr__(self):
+		return f"{self.first} is {self.age}"
+
 	@classmethod
 	def display_active_users(cls):
 		return f"There are currently {cls.active_users}"
@@ -70,3 +73,5 @@ print(user1.display_active_users())
 print(User.display_active_users())
 
 Tom = User.from_string("Tom,Jones,89")  # calling class method
+
+j = User()
