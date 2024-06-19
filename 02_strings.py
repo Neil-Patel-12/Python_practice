@@ -13,21 +13,21 @@ print("from" in me)
 print("hello" not in me)
 
 # <------ Slice ------>
-print("<------ Slice ------>")
+print("\n<------ Slice ------>")
 
 new = "school is fun with python"
 
-print(new[2:8])
-print(new[:9])
-print(new[1:])
-print(new[-6])   # try -1
-print(new[-6:-1])
-print(new[::-1])
+print(new[2:8])  # "hool is"
+print(new[:9])  # "school is"
+print(new[1:])  # "chool is fun with python"
+print(new[-6])  # "p" # try -1
+print(new[-6:-1])  # "pytho"
+print(new[::-1])  # "nohtyp htiw nuf si loohcs"
 
 # <------ methods ------>
-print("<------ methods ------>")
+print("\n<------ methods ------>")
 
-methods = "The solar system needs to be explored"
+methods = "   The solar system needs to be explored   "
 print(methods.upper())
 print(methods.lower())
 print(methods.strip())   # removes white space
@@ -36,7 +36,7 @@ arr5 = methods.split(" ")
 print(arr5)
 
 # <------ Concatenation ------>
-print("<------ Concatenation ------>")
+print("\n<------ Concatenation ------>")
 
 a = "how are "
 b = "you doing?"
@@ -44,7 +44,7 @@ c = a + b
 print(c)
 
 # <------ F-string ------>
-print("<------ F-string ------>")
+print("\n<------ F-string ------>")
 
 age = 36.589
 txt = f"My name is John, I am {age}"
