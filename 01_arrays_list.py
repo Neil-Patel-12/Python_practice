@@ -171,18 +171,24 @@ print("\n<---- List SLICE ---->")
 
 arr77 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-print(arr77[::-1])
+print(arr77[::-1])  # [9, 8, 7, 6, 5, 4, 3, 2, 1]
 
-print(arr77[1::2])
+print(arr77[1::2])  # [2, 4, 6, 8]
 
-print(arr77[len(arr77)::-1])
+print(arr77[len(arr77)::-1])  # [9, 8, 7, 6, 5, 4, 3, 2, 1]
 
-print(arr77[::-2])
-print(arr77[2::-1])
-print(arr77[5:0:-1])
+print(arr77[len(arr77)-1::-1])  # [9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+print(arr77[len(arr77)-1:0:-1])  # [9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+print(arr77[13::-1])  # [9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+print(arr77[::-2])  # [9, 7, 5, 3, 1]
+print(arr77[2::-1])  # [3, 2, 1]
+print(arr77[5:0:-1])  # [6, 5, 4, 3, 2]
 
 arr77[0], arr77[1] = arr77[1], arr77[0]
-print(arr77)
+print(arr77)  # [2, 1, 3, 4, 5, 6, 7, 8, 9]
 
 
 
@@ -196,6 +202,11 @@ nested = [
      [7, 8, 9],
      [10, 11, 12]
 ]
+
+for i in range(len(nested)):
+    for j in range(len(nested[0])):
+        print(nested[i][j], end="-")
+    print()
 
 # this is unpacking to variable, useful for pairs
 x, y, z = [10, 20, 30]
