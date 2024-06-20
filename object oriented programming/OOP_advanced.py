@@ -22,7 +22,12 @@ class Cat(Animal):
 
 blue = Cat()
 blue.make_sound("MEOOOWWWAAA")
+
 print(blue.cool)
 print(Cat.cool)
 print(Animal.cool)
+
 print(isinstance(blue, Animal))
+print(isinstance(blue, Cat))
+print(isinstance(blue, object))
+
