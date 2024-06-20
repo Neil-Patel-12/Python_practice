@@ -14,12 +14,35 @@ add special methods to classes
 
 class Animal:
 	cool = True
+	def __init__(self, name, species):
+		self.name = name
+		self.species = species
+
+	def __repr__(self):
+		return f"{self.name} is a {self.species}"
+
 	def make_sound(self, sound):
 		print(f"this animal says {sound}")
 
 class Cat(Animal):
-	pass
+	def __init__(self, name, species, breed, toy):
+		super().__init__(name, species)
+		# Animal.__init__(self, name, species)
+		self.breed = breed
+		self.toy = toy
+	def play(self):
+		print(f"{self.name} plays with {self.toy}")
 
+blue = Cat("Blue", "Cat", "Scottish Fold", "String")
+print(blue)
+print(blue.species)
+print(blue.breed)
+print(blue.toy)
+blue.play()
+
+
+
+"""
 blue = Cat()
 blue.make_sound("MEOOOWWWAAA")
 
@@ -30,4 +53,4 @@ print(Animal.cool)
 print(isinstance(blue, Animal))
 print(isinstance(blue, Cat))
 print(isinstance(blue, object))
-
+"""
