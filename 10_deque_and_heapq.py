@@ -32,21 +32,23 @@ heapq.heappush(minHeap, 7)
 print("Min is: ", minHeap[0])
 
 while len(minHeap):
-	print(heapq.heappop(minHeap))
+	removed_val = heapq.heappop(minHeap)
+	print(removed_val)
 
 
 
 # No max heap, but multiply by -1 when push & pop
 maxHeap = []
-heapq.heappush(maxHeap, -5)
-heapq.heappush(maxHeap, -8)
-heapq.heappush(maxHeap, -9)
+heapq.heappush(maxHeap, -1 * 5)
+heapq.heappush(maxHeap, -1 * 8)
+heapq.heappush(maxHeap, -1 * 9)
 
 # Max at index 0
 print("Max is: ", -1 * maxHeap[0])
 
 while len(maxHeap):
-	print(-1 * heapq.heappop(maxHeap))
+	removed_val = -1 * heapq.heappop(maxHeap)
+	print(removed_val)
 
 
 
@@ -55,4 +57,3 @@ array = [2, 6, 7, 3, 4]
 heapq.heapify(array)
 while array:
 	print(heapq.heappop(array))
-	
