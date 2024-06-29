@@ -39,7 +39,7 @@ places = {
 print(places[(35.6895, 39.6917)])
 
 animals = {"name": "Biscuit", "age": 1.2, "fav_toy": "swing"}
-animals.items()
+print(animals.items())
 # dict_items([("name", "blue"), ("age", 1.2), ("fav_toy", "swing")])
 #                   tuple^^      # tuple^^      # tuple^^
 print(animals)
