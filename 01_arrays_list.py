@@ -30,7 +30,7 @@ print("\n<---- Access List Items ---->")
 animals = ["cat", "dog", "horse", "lion", "elephant", "bear"]
 print(animals[1])
 print(animals[-2])
-print(animals[2:5])
+print(animals[2:5])  # O(k)
 print(animals[:4])
 print(animals[2:])
 print(animals[-4:-1])
@@ -49,7 +49,7 @@ cars = ["Ford", "BMW", "Mercury", "Audi", "Bentley"]
 cars[0] = "Koenigsegg"
 cars[1:3] = ["McLaren", "Porsche"]
 cars.insert(3, "Lamborghini")
-print("the cars are: ", cars, " the size of the array is: ", len(cars))
+print("the cars are: ", cars, " the size of the array is:", len(cars))
 
 
 
@@ -115,7 +115,7 @@ print("\n<---- List Comprehension ---->")
 triple = [(i*3) for i in range(11)]
 print(triple)
 
-closePeople = ["deep", "raj", "kush", "aria"]
+closePeople = ["john", "blade", "bob", "blue"]
 # betterPeople = [closePeople[i][0].upper() + closePeople[i][1:] for i in range(len(closePeople))]
 
 betterPeople = [(ppl[0].upper() + ppl[1:])for ppl in closePeople]
@@ -208,5 +208,5 @@ for i in range(len(nested)):
         print(nested[i][j], end="-")
     print()
 
-# this is unpacking to variable, useful for pairs
+# this is unpacking variable, useful for pairs
 x, y, z = [10, 20, 30]
