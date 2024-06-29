@@ -53,6 +53,7 @@ print(f"Wow! He is {age:.2f} years old!")
 
 
 # <---- ord() and chr() ---->
+print("\n<------ ord() and chr() ------>")
 print(ord("A"))
 print(ord("a"))
 print(ord("b"))
