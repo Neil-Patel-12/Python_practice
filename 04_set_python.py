@@ -13,6 +13,8 @@ print("\n<---- Accessing and Creating ---->")
 
 s = set({1, 2, 3, 4, 5, 5, 5})
 
+# v = set(7, 6, 5, 4, 3, 2)
+
 b = {4, 9, 3, 6, 9}
 
 m = {5.5, 'a', 89, "hello", True}
@@ -23,9 +25,12 @@ if True in m:
     print("True is in there")
 
 for thing in m:
-    print("<>", thing, end="")
+    print("####", thing, end=" ")
+print()
 
-
+print(s)
+print(b)
+print(m)
 
 
 # <---- something cool ---->
@@ -44,8 +49,11 @@ print("\n<---- Methods ---->")
 b.add(5)
 b.remove(4)  # will throw KeyError if item not in set
 b.discard(7)  # will not throw KeyError
+print(b)
+
 another_b = b.copy()  # another_b is b == False
 another_b.clear()
+print(another_b)
 
 # set math ( intersection, symmetric_difference, union )
 math_students = {"Matthew", "Helen", "Prashant", "James", "Aparna"}
@@ -66,8 +74,9 @@ print(new2)
 print("\n<---- Set Comprehension ---->")
 
 check = {x ** 2 for x in range(0, 10)}
-next = {char.upper() for char in "runner"}
-print(check, next)
+next1 = {char.upper() for char in "runner"}
+print(check)
+print(next1)
 
 
 def check_all_vowels_in_s(check_string):
