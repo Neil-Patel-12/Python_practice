@@ -28,10 +28,14 @@ print(add.__name__) # <lambda>
 def decrement_list(arr):
     new_arr = list(map(lambda x: x - 1, arr))
     return new_arr
-
+print(decrement_list([4, 5, 6]))
 
 def extract_full_name(diction):
     return list(map(lambda val: f"{val['first']} {val['last']}", diction))
+print(extract_full_name([
+    {'first': 'John', 'last': 'Doe'},
+    {'first': 'Jane', 'last': 'Smith'}
+]))
 
 
 nums = [2, 4, 6, 8, 10]
@@ -93,9 +97,9 @@ print(f"Generator Expression: {gen_exp} bytes")
 
 # sorted: Returns a new sorted list from the items in iterable
 more_numbers = [6, 1, 8, 2]
-sorted(more_numbers)  # [1, 2, 6, 8]
+print(sorted(more_numbers))  # [1, 2, 6, 8]
 print(more_numbers)  # [6, 1, 8, 2]
-sorted(more_numbers, reverse=True)
+print(sorted(more_numbers, reverse=True))
 
 users = [
     {"username": "samuel", "tweets": ["i love cake", "wow"]},
@@ -107,6 +111,8 @@ users = [
 another1 = sorted(users, key=lambda user: user["username"])
 another2 = sorted(users, key=lambda user: len(user["tweets"]))
 
+print("another1", another1)
+print("another2", another2)
 
 
 
@@ -136,7 +142,10 @@ print(max({1: 'a', 3: 'c', 2: 'b'})) #
 
 names2 = ['Arya', 'Samson', 'Dora', 'Tim', 'Ollivander']
 most_char = max(len(name) for name in names2)  # Generator Expression
+print(most_char)
+
 name_with_most_char = max(names2, key=lambda n: len(n))
+print(name_with_most_char)
 
 songs = [
     {"title": "happy birthday", "playcount": 1},
@@ -147,6 +156,9 @@ songs = [
 
 least_played_song = min(songs, key=lambda s: s["playcount"])
 best_song = max(songs, key=lambda s: s["playcount"])["title"]
+
+print('NOT A GOOD SONG', least_played_song)
+print("A GOOD SONG", best_song)
 
 
 
@@ -160,10 +172,13 @@ print(nuns)
 print(list(reversed(nuns)))  # nuns = [4, 3, 2, 1] then -> [1, 2, 3, 4]
 
 for char in reversed("hello world"):
-    print(char)
+    print(char, end=" ")
 for i in reversed(range(0, 10)):
     print(i)
 
+arrays = [4, 5, 6, 1, 2, 3, 8, 9 ,0]
+for i in reversed(arrays):
+    print(i, end="")
 
 
 # len: return the length      they all have a __len__() dunder
