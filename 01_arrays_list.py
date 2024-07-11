@@ -3,11 +3,14 @@
 # the items in a list can be ordered, changeable, and allows duplicate values
 # the order can stay the same or change/ list can change, add, & remove items
 
-mylist = ["apple", "banana", "cherry", "orange", "grapes", "blueberry"]
-print(mylist)
+# <---- Creating List ---->
+print("\n<---- Creating List ---->")
 
-number = len(mylist)
-print(number)
+fruits = ["apple", "banana", "cherry", "orange", "grapes", "blueberry"]
+print(fruits)
+
+size = len(fruits)
+print(size)
 
 initialize_array = [1] * 5
 
@@ -20,7 +23,6 @@ list6 = list((10, 20, 30, 40, 50, 60))
 list7 = list(range(1, 11))
 
 print(type(list6))
-
 
 
 
@@ -41,7 +43,6 @@ for i in range(0, len(animals)):
 
 
 
-
 # <---- Change List Items ---->
 print("\n<---- Change List Items ---->")
 
@@ -50,7 +51,6 @@ cars[0] = "Koenigsegg"
 cars[1:3] = ["McLaren", "Porsche"]
 cars.insert(3, "Lamborghini")
 print("the cars are: ", cars, " the size of the array is:", len(cars))
-
 
 
 
@@ -69,7 +69,6 @@ print(nums)
 
 
 
-
 # <---- Remove List Items ---->
 print("\n<---- Remove List Items ---->")
 
@@ -77,15 +76,17 @@ color = ["yellow", "red", "green", "red", "blue", "purple", "pink", "white"]
 color.remove("red")  # removes the specified item # will remove the first occurrence
 color.pop()  # removes the last item
 color.pop(-1)  # remove the specified index
-
 del color[3]  # remove the specified index
+
+print(color)
+
 color.clear()  # delete everything inside the list, list still remains.
 del color  # delete the entire array
 
 # Removing an item by index
 numbers_array = [1, 9, 10, 3, 4, 5]
 del numbers_array[1]  # Removing the item at index 1, numbers_array is now [1, 10, 3, 4, 5]
-
+print(numbers_array)
 
 
 
@@ -107,7 +108,6 @@ for i, car in enumerate(cars):
 
 
 
-
 # <---- List Comprehension ---->
 print("\n<---- List Comprehension ---->")
 
@@ -115,21 +115,24 @@ print("\n<---- List Comprehension ---->")
 triple = [(i*3) for i in range(11)]
 print(triple)
 
-closePeople = ["john", "blade", "bob", "blue"]
-# betterPeople = [closePeople[i][0].upper() + closePeople[i][1:] for i in range(len(closePeople))]
+names = ["john", "blade", "bob", "blue"]
+# names_upper = [names[i][0].upper() + names[i][1:] for i in range(len(names))]
 
-betterPeople = [(ppl[0].upper() + ppl[1:])for ppl in closePeople]
-print(betterPeople)
+names_upper = [(ppl[0].upper() + ppl[1:]) for ppl in names]
+print(names_upper)
 
 falsyyy = [bool(val) for val in [0, [], "", 66]]
 print(falsyyy)
 
 # CONDITIONAL LOGIC IN LIST COMPREHENSION
-moreNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-evenNum = [val for val in moreNumber if val % 2 == 0]
+moreNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-oddNum = [num**2 if num % 2 == 0 else num**3 for num in moreNumber]
+evenNums = [val for val in moreNumbers if val % 2 == 0]
 
+coolNums = [num**2 if num % 2 == 0 else num**3 for num in moreNumbers]
+
+print(evenNums)
+print(coolNums)
 
 
 
@@ -142,17 +145,21 @@ data.append([9, 8, 7])  # can add anything to the end
 data.insert(4, 200)
 # data.extend("hello there")   # can add anything that is iterable
 
-data.pop()   # removes and return the item that is removed
-data.pop(1)   # removes and return the item that is removed
-data.remove(4)
+print(data)
+
+print(data.pop())   # removes and return the item that is removed
+print(data.pop(1))   # removes and return the item that is removed
+print(data.remove(4))
 # data.clear()
 
-data.index(1)  # it's at position 0
-data.index(1, 3)  # start at 3
-data.count(1)  # how many 1s are there?
+print(data.index(1))  # it's at position 0
+print(data.index(1, 3))  # start at 3
+print(data.count(1))  # how many 1s are there?
 
-data.reverse()  # reverse the list in place
 data.sort()
+data.reverse()  # reverse the list in place
+print(data)
+
 data.sort(reverse=True)
 newData = sorted(data)
 
@@ -165,48 +172,50 @@ print(data)
 
 
 
-
 # <---- List SLICE ---->
 print("\n<---- List SLICE ---->")
 
 arr77 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-print(arr77[::-1])  # [9, 8, 7, 6, 5, 4, 3, 2, 1]
+print(arr77[::-1])  # [9, 8, 7, 6, 5, 4, 3, 2, 1]   O(n)
 
-print(arr77[1::2])  # [2, 4, 6, 8]
+print(arr77[1::2])  # [2, 4, 6, 8]   O(n/k), where k is the step size
 
 print(arr77[len(arr77)::-1])  # [9, 8, 7, 6, 5, 4, 3, 2, 1]
 
 print(arr77[len(arr77)-1::-1])  # [9, 8, 7, 6, 5, 4, 3, 2, 1]
 
-print(arr77[len(arr77)-1:0:-1])  # [9, 8, 7, 6, 5, 4, 3, 2, 1]
+print(arr77[len(arr77)-1:0:-1])  # [9, 8, 7, 6, 5, 4, 3, 2]
 
 print(arr77[13::-1])  # [9, 8, 7, 6, 5, 4, 3, 2, 1]
 
 print(arr77[::-2])  # [9, 7, 5, 3, 1]
 print(arr77[2::-1])  # [3, 2, 1]
-print(arr77[5:0:-1])  # [6, 5, 4, 3, 2]
+print(arr77[5:0:-1])  # [6, 5, 4, 3, 2]   O(m), where m is the size of slice
 
 arr77[0], arr77[1] = arr77[1], arr77[0]
 print(arr77)  # [2, 1, 3, 4, 5, 6, 7, 8, 9]
 
-
+# O(end-start/)
+#  (  |step|  )
 
 
 # <---- Nested List ---->
 print("\n<---- Nested List ---->")
 
 nested = [
-     [1, 2, 3],
-     [4, 5, 6],
-     [7, 8, 9],
-     [10, 11, 12]
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [10, 11, 12]
 ]
 
 for i in range(len(nested)):
-    for j in range(len(nested[0])):
+    for j in range(len(nested[i])):
         print(nested[i][j], end="-")
     print()
+print()
 
 # this is unpacking variable, useful for pairs
 x, y, z = [10, 20, 30]
+print(x, y, z, "\n")
