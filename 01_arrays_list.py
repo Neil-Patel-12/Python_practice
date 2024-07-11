@@ -62,7 +62,9 @@ nums.append(10)
 
 nums.insert(3, 20)
 
-nums.extend([60, 70, 80, 90])  # can add any iterable object (tuples, sets, dictionaries etc.)
+nums.extend([60, 70, 80, 90])  
+# can add any iterable object (tuples, sets, dictionaries etc.)
+
 nums.extend("Neil Patel")
 
 print(nums)
@@ -73,7 +75,7 @@ print(nums)
 print("\n<---- Remove List Items ---->")
 
 color = ["yellow", "red", "green", "red", "blue", "purple", "pink", "white"]
-color.remove("red")  # removes the specified item # will remove the first occurrence
+color.remove("red")  # removes the first occurrence of specified item
 color.pop()  # removes the last item
 color.pop(-1)  # remove the specified index
 del color[3]  # remove the specified index
@@ -85,8 +87,8 @@ del color  # delete the entire array
 
 # Removing an item by index
 numbers_array = [1, 9, 10, 3, 4, 5]
-del numbers_array[1]  # Removing the item at index 1, numbers_array is now [1, 10, 3, 4, 5]
-print(numbers_array)
+del numbers_array[1]  # Removing the item at index 1
+print(numbers_array)  # numbers_array is now [1, 10, 3, 4, 5]
 
 
 
@@ -116,7 +118,7 @@ triple = [(i*3) for i in range(11)]
 print(triple)
 
 names = ["john", "blade", "bob", "blue"]
-# names_upper = [names[i][0].upper() + names[i][1:] for i in range(len(names))]
+# names_upper = [names[i][0].upper()+names[i][1:] for i in range(len(names))]
 
 names_upper = [(ppl[0].upper() + ppl[1:]) for ppl in names]
 print(names_upper)
