@@ -1,8 +1,8 @@
 # Lists are implemented as dynamic arrays.
-# Lists are mutable.
-# Lists allow duplicate values.
 # List order is maintained but can change.
+# Lists are mutable.
 # Items can be added and removed.
+# Lists allow duplicate values.
 
 # <---- Creating List ---->
 print("\n<---- Creating List ---->")
@@ -82,8 +82,8 @@ print("\n<---- Remove List Items ---->")
 
 color = ["yellow", "red", "green", "red", "blue", "purple", "pink", "white"]
 color.remove("red")  # removes the first occurrence of specified item
-color.pop()  # removes the last item
-color.pop(-1)  # remove the specified index
+popped_item = color.pop()  # removes the last item
+color.pop(-2)  # remove the specified index
 del color[3]  # remove the specified index
 
 print(color)
@@ -103,16 +103,29 @@ print("\n<---- Loop Lists ---->")
 
 for car in cars:
     print(car, end=", ")
-print()
+
+print("\n")
 
 for i in range(len(cars)):
     print(f"{i}: {cars[i]}")
+
 print()
 
 for i, car in enumerate(cars):
     print(i, car)
 
+print()
+
 [print(x) for x in cars]  # List Comprehension
+
+print()
+
+i = 0
+while i < len(cars):
+    print(cars[i], end=" ")
+    i += 1
+
+print()
 
 
 
@@ -164,7 +177,7 @@ print(data.index(1))  # it's at position 0
 print(data.index(1, 3))  # start at 3
 print(data.count(1))  # how many 1s are there?
 
-data.sort()
+data.sort()  # O(n log n)
 data.reverse()  # reverse the list in place
 print(data)
 
