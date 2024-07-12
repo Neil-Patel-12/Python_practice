@@ -1,7 +1,8 @@
-# lists are implemented as dynamic arrays internally.
-
-# the items in a list can be ordered, changeable, and allows duplicate values
-# the order can stay the same or change/ list can change, add, & remove items
+# Lists are implemented as dynamic arrays.
+# Lists are mutable.
+# Lists allow duplicate values.
+# List order is maintained but can change.
+# Items can be added and removed.
 
 # <---- Creating List ---->
 print("\n<---- Creating List ---->")
@@ -13,14 +14,19 @@ size = len(fruits)
 print(size)
 
 initialize_array = [1] * 5
+print(initialize_array)
 
 list1 = ["father", "mother", "sister", "brother"]
 list2 = [1, 5, 7, 9, 3]
 list3 = [True, False, False]
-list4 = ["abc", 34, True, 40, "male"]
+list4 = ["abc", 34, True, 40.9, "male"]
 list5 = list()
 list6 = list((10, 20, 30, 40, 50, 60))
-list7 = list(range(1, 11))
+list7 = list(range(1, 1000))
+list8 = list(fruits)
+
+print(list5)
+print(list6)
 
 print(type(list6))
 
