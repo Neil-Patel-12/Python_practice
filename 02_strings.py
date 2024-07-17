@@ -32,15 +32,15 @@ print("hello" not in bird)
 # <------ Slice ------>
 print("\n<------ Slice ------>")
 
-new = "school is fun with python"
+student = "school is fun with python"
 
-print(new[2:8])  # "hool is"
-print(new[:9])  # "school is"
-print(new[1:])  # "chool is fun with python"
-print(new[-6])  # "p" # try -1
-print(new[-6:-1])  # "pytho"
-print(new[::2])  # "sho sfnwt yhn"
-print(new[::-1])  # "nohtyp htiw nuf si loohcs"
+print(student[2:8])  # "hool is"
+print(student[:9])  # "school is"
+print(student[1:])  # "chool is fun with python"
+print(student[-6])  # "p" # try -1
+print(student[-6:-1])  # "pytho"
+print(student[::2])  # "sho sfnwt yhn"
+print(student[::-1])  # "nohtyp htiw nuf si loohcs"
 
 
 # <------ built-in methods ------>
@@ -63,18 +63,18 @@ s = "abc123!"
 print(s.isalnum())  # Output: False
 
 # alphabetic
-s = "abc"
-print(s.isalpha())  # Output: True
+k = "abc"
+print(k.isalpha())  # Output: True
 
-s = "abc123"
-print(s.isalpha())  # Output: False
+k = "abc123"
+print(k.isalpha())  # Output: False
 
 # numbers
-s = "123"
-print(s.isdigit())  # Output: True
+m = "123"
+print(m.isdigit())  # Output: True
 
-s = "123abc"
-print(s.isdigit())  # Output: False
+m = "123abc"
+print(m.isdigit())  # Output: False
 
 """
 islower(), isupper(), isspace(), 
