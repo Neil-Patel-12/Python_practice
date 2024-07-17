@@ -1,3 +1,7 @@
+# list (array) is a collection of items stored at contiguous memory locations.
+# The idea is to store multiple items of the same type together.
+
+# they are indexable & everything inside can be called elements/items/values.
 # Lists are implemented as dynamic arrays.
 # List order is maintained but can change.
 # Lists are mutable.
@@ -36,7 +40,7 @@ print(type(list6))
 print("\n<---- Access List Items ---->")
 
 animals = ["cat", "dog", "horse", "lion", "elephant", "bear"]
-print(animals[1])
+print(animals[1])  # O(1)
 print(animals[-2])
 print(animals[2:5])  # O(k)
 print(animals[:4])
@@ -214,6 +218,8 @@ print(arr77[::-2])  # [9, 7, 5, 3, 1]
 print(arr77[2::-1])  # [3, 2, 1]
 print(arr77[5:0:-1])  # [6, 5, 4, 3, 2]   O(m), where m is the size of slice
 
+print(arr77[4:7])
+
 arr77[0], arr77[1] = arr77[1], arr77[0]
 print(arr77)  # [2, 1, 3, 4, 5, 6, 7, 8, 9]
 
@@ -236,6 +242,7 @@ for i in range(len(nested)):
         print(nested[i][j], end="-")
     print()
 print()
+# O(n^2)
 
 # this is unpacking variable, useful for pairs
 x, y, z = [10, 20, 30]
