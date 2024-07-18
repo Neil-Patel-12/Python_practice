@@ -32,15 +32,15 @@ print("hello" not in bird)
 # <------ Slice ------>
 print("\n<------ Slice ------>")
 
-student = "school is fun with python"
+Alphabet = "abcdefghijklmnopqrstuvwxyz"
 
-print(student[2:8])  # "hool is"
-print(student[:9])  # "school is"
-print(student[1:])  # "chool is fun with python"
-print(student[-6])  # "p" # try -1
-print(student[-6:-1])  # "pytho"
-print(student[::2])  # "sho sfnwt yhn"
-print(student[::-1])  # "nohtyp htiw nuf si loohcs"
+print(Alphabet[-6])  # "u"
+print(Alphabet[2:8])  # "cdefgh"
+print(Alphabet[1:])  # "bcdefghijklmnopqrstuvwxyz"
+print(Alphabet[:9])  # "abcdefghi"
+print(Alphabet[-6:-1])  # "uvwxy"
+print(Alphabet[::2])  # "acegikmoqsuwy"
+print(Alphabet[::-1])  # "zyxwvutsrqponmlkjihgfedcba"
 
 
 # <------ built-in methods ------>
@@ -83,7 +83,7 @@ islower(), isupper(), isspace(),
 home_info = [
     "5 bedrooms", 
     "4 baths", 
-    "3,500 sq ft", 
+    "3500 sq ft", 
     "2-car garage", 
     "Built in 2005"
 ]
